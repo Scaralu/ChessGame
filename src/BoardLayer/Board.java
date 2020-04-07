@@ -41,7 +41,7 @@ public class Board {
 
     public Piece piece(Integer row, Integer column){
         if (!positionExists(row, column)){
-            throw new BoardException("That position doesn't exists")
+            throw new BoardException("That position doesn't exists");   
         }
 
         return pieces[row][column];
@@ -70,7 +70,7 @@ public class Board {
 
     public boolean thereIsAPiece(Position position){
         if (!positionExists(position)){
-            throw new BoardException("That position doesn't exists")
+            throw new BoardException("That position doesn't exists");
         }
         return piece(position) != null;
     }
