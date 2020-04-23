@@ -32,17 +32,20 @@ public class UI {
 
 
     public static ChessPosition readChessPosition(Scanner sc){
-        try{
-            System.out.println();
-            String selectedPosition = sc.nextLine();
+        try {
+            String selectedPosition = sc.next();
             char column = selectedPosition.charAt(0);
             int row = Integer.parseInt(selectedPosition.substring(1));
 
             return new ChessPosition(column, row);
+        } catch (RuntimeException e){
+            throw new InputMismatchException("Error reading position values, valid values are from 1a to 8h");
         }
-        catch (RuntimeException e){
-            throw new InputMismatchException("Error reading position values, valid values are from a1 to h8");
-        }
+    }
+
+    public static void clearTerminal(){
+        System.out.println("\033[H\033[2J");
+        System.out.flush();
     }
 
 
