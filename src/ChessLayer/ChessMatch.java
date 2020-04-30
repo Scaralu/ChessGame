@@ -3,8 +3,7 @@ package ChessLayer;
 import BoardLayer.Board;
 import BoardLayer.Piece;
 import BoardLayer.Position;
-import ChessLayer.pieces.King;
-import ChessLayer.pieces.Rook;
+import ChessLayer.pieces.*;
 
 public class ChessMatch {
 
@@ -84,6 +83,13 @@ public class ChessMatch {
         placeNewPiece('f', 2, new Pawn(board, Color.WHITE));
         placeNewPiece('g', 2, new Pawn(board, Color.WHITE));
         placeNewPiece('h', 2, new Pawn(board, Color.WHITE));
+
+        //Bishop Test
+        placeNewPiece('d', 4, new Bishop(board, Color.BLACK));
+        //Rook Test
+        placeNewPiece('b', 4, new Rook(board, Color.WHITE));
+        //Hose Test
+        placeNewPiece('g', 4, new Horse(board, Color.BLACK));
 
         placeNewPiece('a', 8, new Rook(board, Color.BLACK));
         placeNewPiece('b', 8, new Horse(board, Color.BLACK));

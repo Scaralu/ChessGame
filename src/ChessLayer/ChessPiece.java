@@ -9,8 +9,13 @@ public abstract class ChessPiece extends Piece {
     private Color color;
 
 
+    protected boolean canMove(Position position){
+        ChessPiece p = (ChessPiece)getBoard().piece(position);
+        return p == null || p.getColor() != getColor();
+    }
+
     protected boolean isThereOponnentPiece(Position p){
-        ChessPiece pi = (ChessPiece) getBoard().piece(position);
+        ChessPiece pi = (ChessPiece)getBoard().piece(p);
         return p != null && pi.getColor() != color;
     }
 
